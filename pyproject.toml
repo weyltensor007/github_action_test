@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "github-action-test"
+version = "0.1.0"
+description = ""
+authors = ["weyltensor007 <weyltensor@gmail.com>"]
+readme = "README.md"
+packages = [{include = "github_action_test"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.32.3"
+pandas = "^2.2.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
