@@ -7,7 +7,7 @@ n = random.randint(0,100)
 
 outstr = f"{datetime.now()}__random:{n}"
 
-with open("log.txt", 'w') as f:
-    f.write(outstr)
+with open("log.txt", 'a') as f:
+    f.write(outstr+"\n")
     
 print(outstr)
