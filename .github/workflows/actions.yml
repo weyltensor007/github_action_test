@@ -1,0 +1,26 @@
+name: test action
+
+on:
+  schedule:
+    - cron: '20 * * * *'
+  workflow_dispatch:
+
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11"
+      - name: Set up Poetry
+        uses: abatilo/actions-poetry@v2.0.0
+        with:
+          poetry-version: "1.5.1"
+      - name: Install packages
+        run: poetry install --no-root
+      - name: Run code
+        run: poetry run python main.py
